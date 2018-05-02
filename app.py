@@ -95,6 +95,7 @@ def webhook():
         #get_weather('Lubbock')
         match = re.search('[Ww]eather in (?P<city>\w+)', message['text'])
         if match:
+            reply(speaker + ' The current weather in ' + match.group('city') + ' is as follows:')
             get_weather(match.group('city'))
         else:
             pass
