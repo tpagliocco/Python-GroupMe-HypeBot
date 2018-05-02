@@ -58,6 +58,10 @@ def webhook():
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' -- shhhhhhh dont let Ryan see us talking about Cedrick')
 
+    # luis reference
+    if 'luis' in message['text'].lower() and not sender_is_bot(message):
+        reply('WITCHOOOOOO87LOVIINNNNNNNASSSSSSSSSSSS')
+
     # delta or chevon reference
     if 'delta or chevon' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker +' it is always a Delta')
