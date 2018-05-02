@@ -8,6 +8,7 @@ import json
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from flask import Flask, request
+import requests
 
 app = Flask(__name__)
 bot_id = "d83162a10aef6bcaf531d322d1"
@@ -114,7 +115,7 @@ def reply_with_image(msg, imgURL):
 
 # Uploads image to GroupMe's services and returns the new URL
 def upload_image_to_groupme(imgURL):
-    imgRequest = request.get(imgURL, stream=True)
+    imgRequest = requests.get(imgURL, stream=True)
     filename = 'temp.png'
     postImage = None
     if imgRequest.status_code == 200:
