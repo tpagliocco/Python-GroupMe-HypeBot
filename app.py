@@ -74,7 +74,7 @@ def webhook():
 
     # quizbot reference
     if 'weather at alpha' in message['text'].lower() and not sender_is_bot(message):
-        get_weather(Lubbock)
+        get_weather('Lubbock')
         #quizbot()
 
     return "ok", 200
