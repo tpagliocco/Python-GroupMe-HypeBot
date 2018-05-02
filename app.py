@@ -67,20 +67,13 @@ def webhook():
     # quizbot reference
     if 'hypequiz!' in message['text'].lower() and not sender_is_bot(message):
         reply('Starting your quiz')
-        quizbot()
+        #quizbot()
 
     return "ok", 200
 
 
 ################################################################################
-# Start a Quiz with HypeBot
-def quizbot():
-    #ask a question
-    
-    #get an answer
 
-
-    #tell them if right or wrong
 
 # Send a message in the groupchat
 def reply(msg):
