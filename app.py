@@ -40,9 +40,15 @@ def webhook():
     if 'hypefact!' in message['text'].lower() and not sender_is_bot(message):
         reply(fact_delivery())
 
-    if 'cedrick' in message['text'].lower() and not sender_is_bot(messages):
+    if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
         reply('Shhhhh dont let Ryan see us talking about Cedrick')
 
+    if 'clint' in message['text'].lower() and not sender_is_bot(message):
+        reply('I have more personality than Clints videos')
+
+    if 'president' in message['text'].lower() and not sender_is_bot(message):
+        reply('Someone say President? Check out www.tony2018.com')
+        
     return "ok", 200
 
 
