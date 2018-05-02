@@ -31,6 +31,10 @@ def webhook():
         imgURL = 'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/31587889_10101675251344908_7201868137652813824_n.jpg?_nc_cat=0&oh=b8465166e2482892684f910c0ff28d19&oe=5B91DE9D'
         reply_with_image(speaker + ' - Susan says hi',imgURL)
 
+    #testing the @ feature
+    if 'repeattest!' in message['text'].lower() and not sender_is_bot(message):
+        reply('@'+speaker + ' - you just spoke to me: ')
+
     # sacraments
     if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' - The Knights of Omega Delta Phi live the sacraments of Unity, Honesty, Integrity, and Leadership!')
