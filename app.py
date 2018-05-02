@@ -46,19 +46,20 @@ def webhook():
     # TODO: Your bot's logic here
     # If hypefact! is spoken, return random fact
     if 'hypefact!' in message['text'].lower() and not sender_is_bot(message):
+        reply(speaker + ' - Here is your Hype Fact: ')
         reply(fact_delivery())
     # hypebot pledge questions
     if 'what is the greek alphabet hypebot' in message['text'].lower() or 'hypebot what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
-        reply('Sir ' + speaker + ' the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
+        reply('Sir ' + speaker + ' ,the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
     # cedrick reference
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
-        reply('Shhhhh dont let Ryan see us talking about Cedrick')
+        reply(speaker + ' -- shhhhhhh dont let Ryan see us talking about Cedrick')
     # delta or chevon reference
     if 'delta or chevon' in message['text'].lower() and not sender_is_bot(message):
-        reply('DELTA')
+        reply(speaker +' it is always a Delta')
     # nli promo ad
     if 'nli' in message['text'].lower() and not sender_is_bot(message):
-        reply('Go to nlichicgo2018.com for info on NLI')
+        reply(speaker + ' just go to nlichicgo2018.com for info on NLI')
     # clint dig
     if 'clint' in message['text'].lower() and not sender_is_bot(message):
         reply('I have more personality than Clints videos')
