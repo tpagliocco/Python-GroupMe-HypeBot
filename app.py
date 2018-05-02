@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__)
-bot_id = "d83162a10aef6bcaf531d322d1" 
+bot_id = "d83162a10aef6bcaf531d322d1"
 
 # random fact generator
 def fact_delivery():
@@ -40,26 +40,29 @@ def fact_delivery():
 def webhook():
     # 'message' is an object that represents a single GroupMe message.
     message = request.get_json()
+    speaker = message['name']
+
 
     # TODO: Your bot's logic here
+    # If hypefact! is spoken, return random fact
     if 'hypefact!' in message['text'].lower() and not sender_is_bot(message):
         reply(fact_delivery())
-
+    # hypebot pledge questions
     if 'what is the greek alphabet hypebot' in message['text'].lower() or 'hypebot what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
-        reply('Sir the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
-
+        reply('Sir ' + speaker + ' the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
+    # cedrick reference
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
         reply('Shhhhh dont let Ryan see us talking about Cedrick')
-
+    # delta or chevon reference
     if 'delta or chevon' in message['text'].lower() and not sender_is_bot(message):
         reply('DELTA')
-
+    # nli promo ad
     if 'nli' in message['text'].lower() and not sender_is_bot(message):
         reply('Go to nlichicgo2018.com for info on NLI')
-
+    # clint dig
     if 'clint' in message['text'].lower() and not sender_is_bot(message):
         reply('I have more personality than Clints videos')
-
+    # president reference
     if 'president' in message['text'].lower() and not sender_is_bot(message):
         reply('Someone say President? Check out www.tony2018.com')
 
