@@ -38,7 +38,11 @@ def webhook():
 
     # hypebot pledge questions
     if 'what is the greek alphabet hypebot' in message['text'].lower() or 'hypebot what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
-        reply('Sir ' + speaker + ' ,the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
+        reply('Sir ' + speaker + ' ,the Greek Alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
+
+    # hypebot pledge questions
+    if 'what is the national founding date hypebot' in message['text'].lower() or 'hypebot what is the national founding date' in message['text'].lower() and not sender_is_bot(message):
+        reply('Sir ' + speaker + '...the Brotherhood of Omega Delta Phi Fraternity, Inc was founded on November 25, 1987..Sir')
 
     # cedrick reference
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
@@ -60,11 +64,23 @@ def webhook():
     if 'president' in message['text'].lower() and not sender_is_bot(message):
         reply('Someone say President? Check out www.tony2018.com')
 
+    # quizbot reference
+    if 'hypequiz!' in message['text'].lower() and not sender_is_bot(message):
+        reply('Starting your quiz')
+        quizbot()
+
     return "ok", 200
 
 
 ################################################################################
+# Start a Quiz with HypeBot
+def quizbot():
+    #ask a question
 
+    #get an answer
+
+    #tell them if right or wrong
+    
 # Send a message in the groupchat
 def reply(msg):
     url = 'https://api.groupme.com/v3/bots/post'
@@ -130,7 +146,7 @@ def fact_delivery():
         'University of Houston Downtown Colony was founded on January 14th, 2014.',
         'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.',
         'Mo Geb, a Xi Brother by the name of Joseph Reyes, Bouba, and Peter Jaravata are the Founders of the CaliKnights!!',
-        'The 8th ODPhi founder of omega delta phi on the 1987 student org application is John Enriquez.',
+        'The 8th ODPhi founder of Omega Delta Phi on the 1987 student org application is John Enriquez.',
         'Beta Chapter was started by Oscar Leroy, an Alpha Chapter Brother who shared his first year odphi experience with his high school buddies who were attending UTEP in 1988.',
         'Gamma Chapter was also started by Oscar Leroy with his relationship to his high school buddy Jeff Martin.',
         'Zeta Chapter was Founded on April 25, 1991. Their founders were: Billy Ray Thompson, Rafael Rivers, Ruben Franco, Juan Dominguez, Hector Lopez, Victor Tarin, Ruben Sanchez, Jesus Sifuentes, & Daniel Gonzales'
