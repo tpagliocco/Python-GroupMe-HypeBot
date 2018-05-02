@@ -74,6 +74,10 @@ def webhook():
     if 'president' in message['text'].lower() and not sender_is_bot(message):
         reply('Someone say President? Check out www.tony2018.com')
 
+    # corpus reference
+    if 'corpus' in message['text'].lower() and not sender_is_bot(message):
+        reply('Isnt Amo from Corpus? What about that ho?')
+
     # quizbot reference
     if 'weather at alpha' in message['text'].lower() and not sender_is_bot(message):
         reply('Currently at Alpha Chapter, it is ')
