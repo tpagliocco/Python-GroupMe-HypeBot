@@ -46,9 +46,9 @@ def webhook():
 
     # TODO: Your bot's logic here
     # nudes
-    if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
-        imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
-        reply_with_image(speaker + ' here you go',imgURL)
+    #if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
+        #imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
+       # reply_with_image(speaker + ' here you go',imgURL)
 
     # sacraments
     if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
