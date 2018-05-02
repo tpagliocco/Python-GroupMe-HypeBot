@@ -79,6 +79,11 @@ def webhook():
         reply('Currently at Alpha Chapter, it is ')
         get_weather('Lubbock')
 
+    # help reference
+    if 'help me hypebot' in message['text'].lower() and not sender_is_bot(message):
+        reply('I am HypeBot version 1987.  Certain phrases will trigger me, you can also type hypefact! and I will shit out a random fact about ODPhi')
+
+
     return "ok", 200
 
 
