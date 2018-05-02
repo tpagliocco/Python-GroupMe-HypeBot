@@ -27,9 +27,9 @@ def webhook():
         imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
         reply_with_image(speaker + ' here you go',imgURL)
     #susan
-    if 'susan' in message['text'].lower() and not sender_is_bot(message):
+    if 'hi susan' in message['text'].lower() and not sender_is_bot(message):
         imgURL = 'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/31587889_10101675251344908_7201868137652813824_n.jpg?_nc_cat=0&oh=b8465166e2482892684f910c0ff28d19&oe=5B91DE9D'
-        reply_with_image(speaker + ' here you go',imgURL)
+        reply_with_image(speaker + ' - Susan says hi',imgURL)
 
     # sacraments
     if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
