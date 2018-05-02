@@ -21,7 +21,7 @@ def webhook():
     message = request.get_json()
     speaker = message['name']
 
-    # TODO: Your bot's logic here
+    # TODO: Your bot's logic here 
     # nudes
     if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
         imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
