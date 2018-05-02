@@ -45,11 +45,17 @@ def webhook():
     if 'hypefact!' in message['text'].lower() and not sender_is_bot(message):
         reply(fact_delivery())
 
-    if 'what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
+    if 'what is the greek alphabet hypebot' in message['text'].lower() or 'hypebot what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
         reply('Sir the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
 
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
         reply('Shhhhh dont let Ryan see us talking about Cedrick')
+
+    if 'delta or chevon' in message['text'].lower() and not sender_is_bot(message):
+        reply('DELTA')
+
+    if 'nli' in message['text'].lower() and not sender_is_bot(message):
+        reply('Go to nlichicgo2018.com for info on NLI')
 
     if 'clint' in message['text'].lower() and not sender_is_bot(message):
         reply('I have more personality than Clints videos')
