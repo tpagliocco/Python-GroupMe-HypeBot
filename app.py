@@ -93,7 +93,7 @@ def webhook():
     if 'weather in' in message['text'].lower() and not sender_is_bot(message):
         #reply('Currently at Alpha Chapter, it is ')
         #get_weather('Lubbock')
-        match = re.search('[Ww]eather in (?P<city>\w+)', text)
+        match = re.search('[Ww]eather in (?P<city>\w+)', message['text'])
         if match:
             get_weather(match.group('city'))
         else:
