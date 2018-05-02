@@ -4,13 +4,10 @@
 # IMPORTS
 import os
 import random
-import urllib.request
 import json
-import urllib.parse
-#from urllib.parse import urlencode
-#from urllib.request import Request, urlopen
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 from flask import Flask, request
-
 
 app = Flask(__name__)
 bot_id = "d83162a10aef6bcaf531d322d1"
