@@ -46,7 +46,7 @@ def webhook():
         reply(fact_delivery())
 
     if 'what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
-        reply('Sir', message['name'], 'the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
+        reply('Sir the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
 
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
         reply('Shhhhh dont let Ryan see us talking about Cedrick')
