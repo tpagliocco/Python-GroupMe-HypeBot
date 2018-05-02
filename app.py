@@ -14,7 +14,17 @@ bot_id = "d83162a10aef6bcaf531d322d1"
 
 # random fact generator
 def fact_delivery():
-    knightFacts = ['Fact 1', 'Fact 2', 'Fact 3']
+    knightFacts = [
+        'Epsilon Chapter was started by Robbie Aguilar, a Gamma Chapter Brother who had transferred to ASU.',
+        'The Oh So Dangerous Epsilon Chapter of Omega Delta Phi was founded on September 22, 1992.',
+        'Beta Chapters expansion was conceived at a Juarez, Mexico bar called Spankys',
+        'Lambda chapter (University of Washington) does an annual canned food drive with KDChi where we table outside of a local grocery store for 1987 minutes',
+        'Jorge Rodriguez’s senior architecture project was designing the Omega Delta Phi headquarters. A model exists of it.',
+        'West Texas State University Colony was granted Theta Chapter on April 16, 1994 and we still Theta. The 8th Wonder of the World. 16 Founders, 8 Charter Members.',
+        'Xi Chapter is the first multicultural Greek organization established in the State of Oklahoma.',
+        'University of Houston Downtown Colony was founded on January 14th, 2014.',
+        'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.'
+    ]
     fact = random.choice(knightFacts)
     return fact
 
