@@ -23,7 +23,12 @@ def fact_delivery():
         'West Texas State University Colony was granted Theta Chapter on April 16, 1994 and we still Theta. The 8th Wonder of the World. 16 Founders, 8 Charter Members.',
         'Xi Chapter is the first multicultural Greek organization established in the State of Oklahoma.',
         'University of Houston Downtown Colony was founded on January 14th, 2014.',
-        'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.'
+        'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.',
+        'Mo Geb, a Xi Brother by the name of Joseph Reyes, Bouba, and Pete RJaravata are the Founders of the CaliKnights!!',
+        'The 8th ODPhi founder of omega delta phi on the 1987 student org application is John Enriquez.',
+        'Beta Chapter was started by Oscar Leroy, an Alpha Chapter Brother who shared his first year odphi experience with his high school buddies who were attending UTEP in 1988.',
+        'Gamma Chapter was also started by Oscar Leroy with his relationship to his high school buddy Jeff Martin.',
+        'Zeta Chapter was Founded on April 25, 1991. Their founders were: Billy Ray Thompson, Rafael Rivers, Ruben Franco, Juan Dominguez, Hector Lopez, Victor Tarin, Ruben Sanchez, Jesus Sifuentes, & Daniel Gonzales'
     ]
     fact = random.choice(knightFacts)
     return fact
@@ -48,7 +53,7 @@ def webhook():
 
     if 'president' in message['text'].lower() and not sender_is_bot(message):
         reply('Someone say President? Check out www.tony2018.com')
-        
+
     return "ok", 200
 
 
