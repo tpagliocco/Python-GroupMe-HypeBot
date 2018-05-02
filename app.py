@@ -66,7 +66,7 @@ def webhook():
 
     # quizbot reference
     if 'hypequiz!' in message['text'].lower() and not sender_is_bot(message):
-        reply('Starting your quiz')
+        reply('The quiz feature is not ready yet')
         #quizbot()
 
     return "ok", 200
