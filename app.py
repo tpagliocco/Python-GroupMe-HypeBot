@@ -8,6 +8,7 @@ import json
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from flask import Flask, request
+import requests
 
 app = Flask(__name__)
 bot_id = os.getenv('BOT_ID')
@@ -46,9 +47,9 @@ def webhook():
 
     # TODO: Your bot's logic here
     # nudes
-    #if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
-        #imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
-       # reply_with_image(speaker + ' here you go',imgURL)
+    if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
+        imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
+        reply_with_image(speaker + ' here you go',imgURL)
 
     # sacraments
     if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
