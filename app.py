@@ -22,9 +22,10 @@ def fact_delivery():
         'Jorge Rodriguez’s senior architecture project was designing the Omega Delta Phi headquarters. A model exists of it.',
         'West Texas State University Colony was granted Theta Chapter on April 16, 1994 and we still Theta. The 8th Wonder of the World. 16 Founders, 8 Charter Members.',
         'Xi Chapter is the first multicultural Greek organization established in the State of Oklahoma.',
+        'Lateef Ipaye has 1987 KDX Littles',
         'University of Houston Downtown Colony was founded on January 14th, 2014.',
         'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.',
-        'Mo Geb, a Xi Brother by the name of Joseph Reyes, Bouba, and Pete RJaravata are the Founders of the CaliKnights!!',
+        'Mo Geb, a Xi Brother by the name of Joseph Reyes, Bouba, and Peter Jaravata are the Founders of the CaliKnights!!',
         'The 8th ODPhi founder of omega delta phi on the 1987 student org application is John Enriquez.',
         'Beta Chapter was started by Oscar Leroy, an Alpha Chapter Brother who shared his first year odphi experience with his high school buddies who were attending UTEP in 1988.',
         'Gamma Chapter was also started by Oscar Leroy with his relationship to his high school buddy Jeff Martin.',
@@ -44,25 +45,39 @@ def webhook():
 
 
     # TODO: Your bot's logic here
+    # nudes
+    if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
+        reply(speaker + ' here you go', 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg')
+
+    # sacraments
+    if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
+        reply(speaker + ' - The Knights of Omega Delta Phi live the sacraments of Unity, Honesty, Integrity, and Leadership!')
+
     # If hypefact! is spoken, return random fact
     if 'hypefact!' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' - Here is your Hype Fact: ')
         reply(fact_delivery())
+
     # hypebot pledge questions
     if 'what is the greek alphabet hypebot' in message['text'].lower() or 'hypebot what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
         reply('Sir ' + speaker + ' ,the greek alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
+
     # cedrick reference
     if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' -- shhhhhhh dont let Ryan see us talking about Cedrick')
+
     # delta or chevon reference
     if 'delta or chevon' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker +' it is always a Delta')
+
     # nli promo ad
     if 'nli' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' just go to nlichicgo2018.com for info on NLI')
+
     # clint dig
     if 'clint' in message['text'].lower() and not sender_is_bot(message):
         reply('I have more personality than Clints videos')
+
     # president reference
     if 'president' in message['text'].lower() and not sender_is_bot(message):
         reply('Someone say President? Check out www.tony2018.com')
