@@ -73,14 +73,36 @@ def webhook():
         reply('Someone say President? Check out www.tony2018.com')
 
     # quizbot reference
-    if 'hypequiz!' in message['text'].lower() and not sender_is_bot(message):
-        reply('The quiz feature is not ready yet')
+    if 'weather at alpha' in message['text'].lower() and not sender_is_bot(message):
+        get_weather(Lubbock)
         #quizbot()
 
     return "ok", 200
 
 
 ################################################################################
+# Get weather
+
+def get_weather(city):
+    GOOGLEAPIKEY = 'AIzaSyCCnY8x4sSLo3JwfHJn1oj3w5qFGsHNwXI'  # your key for Google's geocoding API
+    DARKSKYAPIKEY = '797fa78aa87c345ba6cccccbb189bccb'  # your key for Dark Sky's weather data API
+    city = city.replace(' ', '+')  # replaces the space if state is also given e.g. 'gainesville, fl'
+    googlebaseURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s' % (
+    city, GOOGLEAPIKEY)  # URL for googles geocoding api
+    res = requests.get(googlebaseURL)
+    res.raise_for_status()
+    geocodeData = json.loads(res.text)
+    geocode = geocodeData['results'][0]['geometry']['location']
+    latitude = geocode['lat']
+    longitude = geocode['lng']
+    darkskybaseURL = 'https://api.darksky.net/forecast/%s/%s,%s' % (DARKSKYAPIKEY, latitude, longitude)
+    res = requests.get(darkskybaseURL)
+    res.raise_for_status()
+    weatherData = json.loads(res.text)
+    degree_sign = u'\N{DEGREE SIGN}'  # degree unicode character
+    reply(weatherData['currently']['summary'] + ', ' + str(
+        weatherData['currently']['apparentTemperature']) + degree_sign + 'F. ' + weatherData['hourly'][
+              'summary'] + '\n\n' + weatherData['daily']['summary'], None)
 
 
 # Send a message in the groupchat
