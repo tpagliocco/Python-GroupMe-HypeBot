@@ -13,29 +13,6 @@ import requests
 app = Flask(__name__)
 bot_id = os.getenv('BOT_ID')
 
-# random fact generator
-def fact_delivery():
-    knightFacts = [
-        'Epsilon Chapter was started by Robbie Aguilar, a Gamma Chapter Brother who had transferred to ASU.',
-        'The Oh So Dangerous Epsilon Chapter of Omega Delta Phi was founded on September 22, 1992.',
-        'Beta Chapters expansion was conceived at a Juarez, Mexico bar called Spankys',
-        'Lambda chapter (University of Washington) does an annual canned food drive with KDChi where we table outside of a local grocery store for 1987 minutes',
-        'Jorge Rodriguez’s senior architecture project was designing the Omega Delta Phi headquarters. A model exists of it.',
-        'West Texas State University Colony was granted Theta Chapter on April 16, 1994 and we still Theta. The 8th Wonder of the World. 16 Founders, 8 Charter Members.',
-        'Xi Chapter is the first multicultural Greek organization established in the State of Oklahoma.',
-        'Lateef Ipaye has 1987 KDX Littles',
-        'University of Houston Downtown Colony was founded on January 14th, 2014.',
-        'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.',
-        'Mo Geb, a Xi Brother by the name of Joseph Reyes, Bouba, and Peter Jaravata are the Founders of the CaliKnights!!',
-        'The 8th ODPhi founder of omega delta phi on the 1987 student org application is John Enriquez.',
-        'Beta Chapter was started by Oscar Leroy, an Alpha Chapter Brother who shared his first year odphi experience with his high school buddies who were attending UTEP in 1988.',
-        'Gamma Chapter was also started by Oscar Leroy with his relationship to his high school buddy Jeff Martin.',
-        'Zeta Chapter was Founded on April 25, 1991. Their founders were: Billy Ray Thompson, Rafael Rivers, Ruben Franco, Juan Dominguez, Hector Lopez, Victor Tarin, Ruben Sanchez, Jesus Sifuentes, & Daniel Gonzales'
-    ]
-    fact = random.choice(knightFacts)
-    return fact
-
-
 # Called whenever the app's callback URL receives a POST request
 # That'll happen every time a message is sent in the group
 @app.route('/', methods=['POST'])
@@ -43,7 +20,6 @@ def webhook():
     # 'message' is an object that represents a single GroupMe message.
     message = request.get_json()
     speaker = message['name']
-
 
     # TODO: Your bot's logic here
     # nudes
@@ -137,3 +113,27 @@ def upload_image_to_groupme(imgURL):
 # Checks whether the message sender is a bot
 def sender_is_bot(message):
     return message['sender_type'] == "bot"
+
+
+
+# random fact generator
+def fact_delivery():
+    knightFacts = [
+        'Epsilon Chapter was started by Robbie Aguilar, a Gamma Chapter Brother who had transferred to ASU.',
+        'The Oh So Dangerous Epsilon Chapter of Omega Delta Phi was founded on September 22, 1992.',
+        'Beta Chapters expansion was conceived at a Juarez, Mexico bar called Spankys',
+        'Lambda chapter (University of Washington) does an annual canned food drive with KDChi where we table outside of a local grocery store for 1987 minutes',
+        'Jorge Rodriguez’s senior architecture project was designing the Omega Delta Phi headquarters. A model exists of it.',
+        'West Texas State University Colony was granted Theta Chapter on April 16, 1994 and we still Theta. The 8th Wonder of the World. 16 Founders, 8 Charter Members.',
+        'Xi Chapter is the first multicultural Greek organization established in the State of Oklahoma.',
+        'Lateef Ipaye has 1987 KDX Littles',
+        'University of Houston Downtown Colony was founded on January 14th, 2014.',
+        'Although Delta Chapter says November 23, 1991 is their founding date, it really became an official Colony on November 17, 1990 at national conference.',
+        'Mo Geb, a Xi Brother by the name of Joseph Reyes, Bouba, and Peter Jaravata are the Founders of the CaliKnights!!',
+        'The 8th ODPhi founder of omega delta phi on the 1987 student org application is John Enriquez.',
+        'Beta Chapter was started by Oscar Leroy, an Alpha Chapter Brother who shared his first year odphi experience with his high school buddies who were attending UTEP in 1988.',
+        'Gamma Chapter was also started by Oscar Leroy with his relationship to his high school buddy Jeff Martin.',
+        'Zeta Chapter was Founded on April 25, 1991. Their founders were: Billy Ray Thompson, Rafael Rivers, Ruben Franco, Juan Dominguez, Hector Lopez, Victor Tarin, Ruben Sanchez, Jesus Sifuentes, & Daniel Gonzales'
+    ]
+    fact = random.choice(knightFacts)
+    return fact
