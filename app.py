@@ -4,9 +4,9 @@
 # IMPORTS
 import os
 import random
-import urlib.request
+import urllib.request
 import json
-import urlib.parse
+import urllib.parse
 #from urllib.parse import urlencode
 #from urllib.request import Request, urlopen
 from flask import Flask, request
