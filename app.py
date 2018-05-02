@@ -76,11 +76,12 @@ def webhook():
 # Start a Quiz with HypeBot
 def quizbot():
     #ask a question
-
+    
     #get an answer
 
+
     #tell them if right or wrong
-    
+
 # Send a message in the groupchat
 def reply(msg):
     url = 'https://api.groupme.com/v3/bots/post'
