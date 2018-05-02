@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__)
-bot_id = "	d83162a10aef6bcaf531d322d1"
+bot_id = "d83162a10aef6bcaf531d322d1"
 
 # Called whenever the app's callback URL receives a POST request
 # That'll happen every time a message is sent in the group
@@ -19,7 +19,8 @@ def webhook():
 	message = request.get_json()
 
 	# TODO: Your bot's logic here
-    if 'groot' in message['text'].lower() and not sender_is_bot(message):  # if message contains 'groot', ignoring case, and sender is not a bot...
+    if 'groot' in message['text'].lower() and not sender_is_bot(message):
+    # if message contains 'groot', ignoring case, and sender is not a bot...
         reply('I am Groot.')
 
     return "ok", 200
