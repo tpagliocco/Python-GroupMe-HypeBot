@@ -37,12 +37,11 @@ def webhook():
     message = request.get_json()
 
     # TODO: Your bot's logic here
-    if 'groot' in message['text'].lower() and not sender_is_bot(
-            message):  # if message contains 'groot', ignoring case, and sender is not a bot...
-        reply('I am Groot.')
-
-    if 'hypefact' in message['text'].lower() and not sender_is_bot(message):
+    if 'hypefact!' in message['text'].lower() and not sender_is_bot(message):
         reply(fact_delivery())
+
+    if 'cedrick' in message['text'].lower() and not sender_is_bot(messages):
+        reply('Shhhhh dont let Ryan see us talking about Cedrick')
 
     return "ok", 200
 
