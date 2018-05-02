@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__)
-bot_id = "d83162a10aef6bcaf531d322d1"
+bot_id = os.getenv('BOT_ID')
 
 # random fact generator
 def fact_delivery():
