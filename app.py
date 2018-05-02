@@ -26,6 +26,10 @@ def webhook():
     if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
         imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
         reply_with_image(speaker + ' here you go',imgURL)
+    #susan
+    if 'susan' in message['text'].lower() and not sender_is_bot(message):
+        imgURL = 'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/31587889_10101675251344908_7201868137652813824_n.jpg?_nc_cat=0&oh=b8465166e2482892684f910c0ff28d19&oe=5B91DE9D'
+        reply_with_image(speaker + ' here you go',imgURL)
 
     # sacraments
     if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
@@ -132,6 +136,7 @@ def fact_delivery():
         'Epsilon Chapter was started by Robbie Aguilar, a Gamma Chapter Brother who had transferred to ASU.',
         'The Oh So Dangerous Epsilon Chapter of Omega Delta Phi was founded on September 22, 1992.',
         'Beta Chapters expansion was conceived at a Juarez, Mexico bar called Spankys',
+        'Tony Pagliocco created me'
         'Lambda chapter (University of Washington) does an annual canned food drive with KDChi where we table outside of a local grocery store for 1987 minutes',
         'Jorge Rodriguez’s senior architecture project was designing the Omega Delta Phi headquarters. A model exists of it.',
         'West Texas State University Colony was granted Theta Chapter on April 16, 1994 and we still Theta. The 8th Wonder of the World. 16 Founders, 8 Charter Members.',
