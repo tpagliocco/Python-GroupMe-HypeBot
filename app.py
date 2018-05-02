@@ -63,6 +63,8 @@ def webhook():
     # nli promo ad
     if 'nli' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' just go to nlichicgo2018.com for info on NLI')
+        reply('Right now in Chicago the weather report is: ')
+        get_weather('Chicago')
 
     # clint dig
     if 'clint' in message['text'].lower() and not sender_is_bot(message):
@@ -74,8 +76,8 @@ def webhook():
 
     # quizbot reference
     if 'weather at alpha' in message['text'].lower() and not sender_is_bot(message):
+        reply('Currently at Alpha Chapter, it is ')
         get_weather('Lubbock')
-        #quizbot()
 
     return "ok", 200
 
