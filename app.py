@@ -3,6 +3,7 @@
 
 # IMPORTS
 import os
+import random
 import json
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -11,63 +12,78 @@ from flask import Flask, request
 app = Flask(__name__)
 bot_id = "d83162a10aef6bcaf531d322d1"
 
+# random fact generator
+def fact_delivery():
+    knightFacts = ['Fact 1', 'Fact 2', 'Fact 3']
+    fact = random.choice(knightFacts)
+    return fact
+
+
 # Called whenever the app's callback URL receives a POST request
 # That'll happen every time a message is sent in the group
 @app.route('/', methods=['POST'])
 def webhook():
-	# 'message' is an object that represents a single GroupMe message.
-	message = request.get_json()
+    # 'message' is an object that represents a single GroupMe message.
+    message = request.get_json()
 
-	# TODO: Your bot's logic here
-	if 'groot' in message['text'].lower() and not sender_is_bot(message):# if message contains 'groot', ignoring case, and sender is not a bot...
-		reply('I am Groot.')
+    # TODO: Your bot's logic here
+    if 'groot' in message['text'].lower() and not sender_is_bot(
+            message):  # if message contains 'groot', ignoring case, and sender is not a bot...
+        reply('I am Groot.')
 
-	return "ok", 200
+    if 'hypefact' in message['text'].lower() and not sender_is_bot(message):
+        reply(fact_delivery())
+
+    return "ok", 200
+
 
 ################################################################################
 
 # Send a message in the groupchat
 def reply(msg):
-	url = 'https://api.groupme.com/v3/bots/post'
-	data = {
-		'bot_id'		: bot_id,
-		'text'			: msg
-	}
-	request = Request(url, urlencode(data).encode())
-	json = urlopen(request).read().decode()
+    url = 'https://api.groupme.com/v3/bots/post'
+    data = {
+        'bot_id': bot_id,
+        'text': msg
+    }
+    request = Request(url, urlencode(data).encode())
+    json = urlopen(request).read().decode()
+
 
 # Send a message with an image attached in the groupchat
 def reply_with_image(msg, imgURL):
-	url = 'https://api.groupme.com/v3/bots/post'
-	urlOnGroupMeService = upload_image_to_groupme(imgURL)
-	data = {
-		'bot_id'		: bot_id,
-		'text'			: msg,
-		'picture_url'		: urlOnGroupMeService
-	}
-	request = Request(url, urlencode(data).encode())
-	json = urlopen(request).read().decode()
-	
+    url = 'https://api.groupme.com/v3/bots/post'
+    urlOnGroupMeService = upload_image_to_groupme(imgURL)
+    data = {
+        'bot_id': bot_id,
+        'text': msg,
+        'picture_url': urlOnGroupMeService
+    }
+    request = Request(url, urlencode(data).encode())
+    json = urlopen(request).read().decode()
+
+
 # Uploads image to GroupMe's services and returns the new URL
 def upload_image_to_groupme(imgURL):
-	imgRequest = requests.get(imgURL, stream=True)
-	filename = 'temp.png'
-	postImage = None
-	if imgRequest.status_code == 200:
-		# Save Image
-		with open(filename, 'wb') as image:
-			for chunk in imgRequest:
-				image.write(chunk)
-		# Send Image
-		headers = {'content-type': 'application/json'}
-		url = 'https://image.groupme.com/pictures'
-		files = {'file': open(filename, 'rb')}
-		payload = {'access_token': 'eo7JS8SGD49rKodcvUHPyFRnSWH1IVeZyOqUMrxU'}
-		r = requests.post(url, files=files, params=payload)
-		imageurl = r.json()['payload']['url']
-		os.remove(filename)
-		return imageurl
+    imgRequest = requests.get(imgURL, stream=True)
+    filename = 'temp.png'
+    postImage = None
+    if imgRequest.status_code == 200:
+        # Save Image
+        with open(filename, 'wb') as image:
+            for chunk in imgRequest:
+                image.write(chunk)
+        # Send Image
+        headers = {'content-type': 'application/json'}
+        url = 'https://image.groupme.com/pictures'
+        files = {'file': open(filename, 'rb')}
+        payload = {'access_token': 'eo7JS8SGD49rKodcvUHPyFRnSWH1IVeZyOqUMrxU'}
+        r = requests.post(url, files=files, params=payload)
+        imageurl = r.json()['payload']['url']
+        os.remove(filename)
+        return imageurl
+
 
 # Checks whether the message sender is a bot
 def sender_is_bot(message):
-	return message['sender_type'] == "bot"
+    return message['sender_type'] == "bot"
