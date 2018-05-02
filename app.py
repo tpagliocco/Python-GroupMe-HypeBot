@@ -102,7 +102,7 @@ def get_weather(city):
     degree_sign = u'\N{DEGREE SIGN}'  # degree unicode character
     reply(weatherData['currently']['summary'] + ', ' + str(
         weatherData['currently']['apparentTemperature']) + degree_sign + 'F. ' + weatherData['hourly'][
-              'summary'] + '\n\n' + weatherData['daily']['summary'], None)
+              'summary'] + '\n\n' + weatherData['daily']['summary'])
 
 
 # Send a message in the groupchat
