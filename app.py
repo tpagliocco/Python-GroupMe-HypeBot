@@ -3,6 +3,7 @@
 
 # IMPORTS
 import os
+import re
 import random
 import json
 from urllib.parse import urlencode
@@ -22,6 +23,7 @@ def webhook():
     speaker = message['name']
 
     # TODO: Your bot's logic here
+
     # nudes
     if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
         imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
@@ -87,7 +89,16 @@ def webhook():
     if 'help me hypebot' in message['text'].lower() and not sender_is_bot(message):
         reply('I am HypeBot version 1987.  Certain phrases will trigger me, you can also type hypefact! and I will shit out a random fact about ODPhi')
 
-
+    # quizbot reference
+    if 'weather in' in message['text'].lower() and not sender_is_bot(message):
+        #reply('Currently at Alpha Chapter, it is ')
+        #get_weather('Lubbock')
+        match = re.search('[Ww]eather in (?P<city>\w+)', text)
+        if match:
+            get_weather(match.group('city'))
+        else:
+            pass
+            # the text does not contain "weather in {CITY}" pattern
     return "ok", 200
 
 
