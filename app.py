@@ -46,6 +46,13 @@ def webhook():
         reply(speaker + ' - Here is your Hype Fact: ')
         reply(fact_delivery())
 
+    # If hypefact! is spoken, return random fact
+    if '8ball!' in message['text'].lower() and not sender_is_bot(message):
+        reply(speaker + ' - Hypebot is generating predictions and performing machine learning: ')
+        reply('Still analyzing....')
+        time.sleep(3)
+        reply(eight_ball())
+
     # hypebot pledge questions
     if 'what is the greek alphabet hypebot' in message['text'].lower() or 'hypebot what is the greek alphabet' in message['text'].lower() and not sender_is_bot(message):
         reply('Sir ' + speaker + ' ,the Greek Alphabet is Alpha, Beta , Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omnicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, and Omega....Sir')
@@ -93,7 +100,7 @@ def webhook():
     if 'help me hypebot' in message['text'].lower() and not sender_is_bot(message):
         reply('I am HypeBot version 1987.  Certain phrases will trigger me, you can also type hypefact! and I will shit out a random fact about ODPhi')
 
-    # quizbot reference
+    # weather reference
     if 'weather in' in message['text'].lower() and not sender_is_bot(message):
         #reply('Currently at Alpha Chapter, it is ')
         #get_weather('Lubbock')
@@ -119,10 +126,7 @@ def webhook():
 # so trigger to ask question, question asked with identiifer, answer comes back, and then checks to see if correct
 # can the variable state last through a dual trigger or is it die in release
 
-# 8 ball feature
-# set up random set of answers
-# set up trigger 8ball! 
-# can use the same function as the fact one just repurpose it and maybe set it up to use one function for both
+
 
 # Get weather
 
@@ -221,3 +225,20 @@ def fact_delivery():
     ]
     fact = random.choice(knightFacts)
     return fact
+
+# 8 ball feature
+# set up random set of answers
+# set up trigger 8ball!
+# can use the same function as the fact one just repurpose it and maybe set it up to use one function for both
+
+
+def eight_ball():
+
+    responses = [
+        'Yes that will happen...1987% chance',
+        'No, no way, no how, I would rather buy a pitbull from Mo than answer yes',
+        'Maybe - but i really got nfc, I mean Kenny gets girls so its evident random shit could happen'
+
+    ]
+    answer = random.choice(responses)
+    return answer
