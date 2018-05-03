@@ -238,7 +238,6 @@ def eight_ball():
         'Yes that will happen...1987% chance',
         'No, no way, no how, I would rather buy a pitbull from Mo than answer yes',
         'Maybe - but i really got nfc, I mean Kenny gets girls so its evident random shit could happen'
-
     ]
     answer = random.choice(responses)
     return answer
