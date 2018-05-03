@@ -10,6 +10,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from flask import Flask, request
 import requests
+import time 
 
 app = Flask(__name__)
 bot_id = os.getenv('BOT_ID')
