@@ -98,17 +98,32 @@ def webhook():
         #reply('Currently at Alpha Chapter, it is ')
         #get_weather('Lubbock')
         match = re.search('[Ww]eather in (?P<city>\w+)', message['text'])
+        #need to fix this double reg ex search so it can do two cities instead of just one
         #match = re.search('[Ww]eather in (?P<city>([A-Z]\w+\W+)+)', message['text'])
         if match:
             reply(speaker + ' The current weather in ' + match.group('city') + ' is as follows:')
             get_weather(match.group('city'))
         else:
             pass
+            # maybe add text for i cant find the scenarios
             # the text does not contain "weather in {CITY}" pattern
     return "ok", 200
 
 
 ################################################################################
+
+# So to setup a proper quiz bot - we want two functions 1 function to ask the question and 1 to answer the question
+# ask_question() will pull a question from a list set up by indexes so q[0] = question 1
+# the question gets asked, the user will answer with a trigger statement
+# the trigger statement will then validate the answer and tell them if yes or no
+# so trigger to ask question, question asked with identiifer, answer comes back, and then checks to see if correct
+# can the variable state last through a dual trigger or is it die in release
+
+# 8 ball feature
+# set up random set of answers
+# set up trigger 8ball! 
+# can use the same function as the fact one just repurpose it and maybe set it up to use one function for both
+
 # Get weather
 
 def get_weather(city):
