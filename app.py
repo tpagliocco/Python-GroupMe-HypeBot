@@ -10,7 +10,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from flask import Flask, request
 import requests
-import time 
+import time
 
 app = Flask(__name__)
 bot_id = os.getenv('BOT_ID')
@@ -50,7 +50,6 @@ def webhook():
     # If hypefact! is spoken, return random fact
     if '8ball!' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' - Hypebot is generating predictions and performing machine learning: ')
-        reply('Still analyzing....')
         time.sleep(3)
         reply(eight_ball())
 
@@ -237,8 +236,8 @@ def eight_ball():
 
     responses = [
         'Yes that will happen...1987% chance',
-        'No, no way, no how, I would rather buy a pitbull from Mo than answer yes',
-        'Maybe - but i really got nfc, I mean Kenny gets girls so its evident random shit could happen'
+        'No, Im sorry',
+        'Maybe - but i really got nfc'
     ]
     answer = random.choice(responses)
     return answer
