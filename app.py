@@ -1,6 +1,4 @@
 # RESOURCE: http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/
-
-
 # IMPORTS
 import os
 import re
@@ -17,26 +15,27 @@ bot_id = os.getenv('BOT_ID')
 
 # Called whenever the app's callback URL receives a POST request
 # That'll happen every time a message is sent in the group
+
 @app.route('/', methods=['POST'])
+
 def webhook():
     # 'message' is an object that represents a single GroupMe message.
     message = request.get_json()
     speaker = message['name']
 
-    # TODO: Your bot's logic here
-
     # nudes
-    if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
-        imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
-        reply_with_image(speaker + ' here you go',imgURL)
+    #if 'hairy bush' in message['text'].lower() and not sender_is_bot(message):
+        #imgURL = 'https://lh3.googleusercontent.com/-KcACUCow5eM/AAAAAAAAAAI/AAAAAAAAApU/Chy90UyVVAk/photo.jpg'
+        #reply_with_image(speaker + ' here you go',imgURL)
+
     #susan
-    if 'hi susan' in message['text'].lower() and not sender_is_bot(message):
-        imgURL = 'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/31587889_10101675251344908_7201868137652813824_n.jpg?_nc_cat=0&oh=b8465166e2482892684f910c0ff28d19&oe=5B91DE9D'
-        reply_with_image(speaker + ' - Susan says hi',imgURL)
+    #if 'hi susan' in message['text'].lower() and not sender_is_bot(message):
+        #imgURL = 'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/31587889_10101675251344908_7201868137652813824_n.jpg?_nc_cat=0&oh=b8465166e2482892684f910c0ff28d19&oe=5B91DE9D'
+        #reply_with_image(speaker + ' - Susan says hi',imgURL)
 
     #testing the @ feature
-    if 'repeattest!' in message['text'].lower() and not sender_is_bot(message):
-        reply('@'+speaker + ' - you just spoke to me: ')
+    #if 'repeattest!' in message['text'].lower() and not sender_is_bot(message):
+        #reply('@'+speaker + ' - you just spoke to me: ')
 
     # sacraments
     if 'sacraments' in message['text'].lower() and not sender_is_bot(message):
@@ -62,8 +61,8 @@ def webhook():
         reply('Sir ' + speaker + '...the Brotherhood of Omega Delta Phi Fraternity, Inc was founded on November 25, 1987..Sir')
 
     # cedrick reference
-    if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
-        reply(speaker + ' -- shhhhhhh dont let Ryan see us talking about Cedrick')
+    #if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
+        #reply(speaker + ' -- shhhhhhh dont let Ryan see us talking about Cedrick')
 
     # luis reference
     if 'luis' in message['text'].lower() and not sender_is_bot(message):
@@ -80,21 +79,16 @@ def webhook():
         get_weather('Chicago')
 
     # clint dig
-    if 'clint' in message['text'].lower() and not sender_is_bot(message):
-        reply('I have more personality than Clints videos')
+    #if 'clint' in message['text'].lower() and not sender_is_bot(message):
+        #reply('I have more personality than Clints videos')
 
     # president reference
     if 'president' in message['text'].lower() and not sender_is_bot(message):
         reply('Someone say President? Check out www.tony2018.com')
 
     # corpus reference
-    if 'corpus' in message['text'].lower() and not sender_is_bot(message):
-        reply('Isnt Amo from Corpus? What about that ho?')
-
-    # quizbot reference
-    if 'weather at alpha' in message['text'].lower() and not sender_is_bot(message):
-        reply('Currently at Alpha Chapter, it is ')
-        get_weather('Lubbock')
+    #if 'corpus' in message['text'].lower() and not sender_is_bot(message):
+        #reply('Corpus - smh.')
 
     # help reference
     if 'help me hypebot' in message['text'].lower() and not sender_is_bot(message):
@@ -114,20 +108,11 @@ def webhook():
             pass
             # maybe add text for i cant find the scenarios
             # the text does not contain "weather in {CITY}" pattern
+
     return "ok", 200
 
 
 ################################################################################
-
-# So to setup a proper quiz bot - we want two functions 1 function to ask the question and 1 to answer the question
-# ask_question() will pull a question from a list set up by indexes so q[0] = question 1
-# the question gets asked, the user will answer with a trigger statement
-# the trigger statement will then validate the answer and tell them if yes or no
-# so trigger to ask question, question asked with identiifer, answer comes back, and then checks to see if correct
-# can the variable state last through a dual trigger or is it die in release
-
-
-
 # Get weather
 
 def get_weather(city):
@@ -226,18 +211,14 @@ def fact_delivery():
     fact = random.choice(knightFacts)
     return fact
 
-# 8 ball feature
-# set up random set of answers
-# set up trigger 8ball!
-# can use the same function as the fact one just repurpose it and maybe set it up to use one function for both
-
-
 def eight_ball():
 
     responses = [
         'Yes that will happen...1987% chance',
         'No, Im sorry',
-        'Maybe - but i really got nfc'
+        'Maybe - but i really got nfc',
+        'Future looks cloudy',
+        'Im leaning towards saying yes'
     ]
     answer = random.choice(responses)
     return answer
