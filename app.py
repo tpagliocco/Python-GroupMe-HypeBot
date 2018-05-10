@@ -62,7 +62,7 @@ def webhook():
 
     if 'what is the mission statement hypebot' in message['text'].lower() or 'hypebot what is the mission statement' in message['text'].lower and not sender_is_bot(message):
         reply('Sir, The purpose of this Brotherhood, a Service/Social fraternity dedicated to the needs and concerns of the community, is and shall be to promote and maintain the traditional values of Unity, Honesty, Integrity, and Leadership. This Brotherhood was founded in order to provide, to ANY man, a diverse fraternal experience which coincides with a higher education.')
-        
+
 
     # cedrick reference
     #if 'cedrick' in message['text'].lower() and not sender_is_bot(message):
@@ -83,8 +83,8 @@ def webhook():
     # nli promo ad
     if 'nli' in message['text'].lower() and not sender_is_bot(message):
         reply(speaker + ' just go to nlichicgo2018.com for info on NLI')
-        reply('Right now in Chicago the weather report is: ')
-        get_weather('Chicago')
+        #reply('Right now in Chicago the weather report is: ')
+        #get_weather('Chicago')
 
     # clint dig
     #if 'clint' in message['text'].lower() and not sender_is_bot(message):
