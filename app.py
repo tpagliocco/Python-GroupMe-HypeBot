@@ -14,7 +14,7 @@ app = Flask(__name__)
 bot_id = os.getenv('BOT_ID')
 
 # Called whenever the app's callback URL receives a POST request
-# That'll happen every time a message is sent in the group
+# That'll happen every time a message is sent in the group test
 
 @app.route('/', methods=['POST'])
 
@@ -60,8 +60,15 @@ def webhook():
     if 'what is the national founding date hypebot' in message['text'].lower() or 'hypebot what is the national founding date' in message['text'].lower() and not sender_is_bot(message):
         reply('Sir ' + speaker + '...the Brotherhood of Omega Delta Phi Fraternity, Inc was founded on November 25, 1987..Sir')
 
+
     if 'what is the mission statement hypebot' in message['text'].lower() or 'hypebot what is the mission statement' in message['text'].lower and not sender_is_bot(message):
         reply('Sir, The purpose of this Brotherhood, a Service/Social fraternity dedicated to the needs and concerns of the community, is and shall be to promote and maintain the traditional values of Unity, Honesty, Integrity, and Leadership. This Brotherhood was founded in order to provide, to ANY man, a diverse fraternal experience which coincides with a higher education.')
+
+
+    if 'what is the mission statement hypebot' in message['text'].lower() or 'hypebot what is the mission statement' in message['text'].lower() and not sender_is_bot(message):
+        reply('Sir, The purpose of this Brotherhood, a Service/Social fraternity dedicated to the needs and concerns of the community, is and shall be to promote and maintain the traditional values of Unity, Honesty, Integrity, and Leadership.')
+        reply('This Brotherhood was founded in order to provide, to ANY man, a diverse fraternal experience which coincides with a higher education.')
+        
 
 
     # cedrick reference
